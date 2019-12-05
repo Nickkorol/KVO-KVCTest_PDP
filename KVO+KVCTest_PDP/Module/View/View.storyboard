@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="CPz-YM-gHU">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="Rhr-X8-NcV" customClass="ViewController" customModule="KVO_KVCTest_PDP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TkF-Po-TkR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kv1-yU-Qx2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="780"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rhr-X8-NcV" id="C6p-xq-d3k"/>
+                                    <outlet property="delegate" destination="Rhr-X8-NcV" id="ptZ-kg-hYM"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SA3-dd-39r">
+                                <rect key="frame" x="0.0" y="824" width="414" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71d-Ka-FLt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Отправить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendButtonTapped:" destination="Rhr-X8-NcV" eventType="touchUpInside" id="8tq-D9-o9p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="71d-Ka-FLt" firstAttribute="leading" secondItem="SA3-dd-39r" secondAttribute="leading" id="DXe-U0-1Nh"/>
+                                    <constraint firstItem="71d-Ka-FLt" firstAttribute="top" secondItem="SA3-dd-39r" secondAttribute="top" id="OLl-pC-0JW"/>
+                                    <constraint firstAttribute="height" constant="72" id="WMa-9M-Uhj"/>
+                                    <constraint firstAttribute="bottom" secondItem="71d-Ka-FLt" secondAttribute="bottom" id="aY8-qg-0mD"/>
+                                    <constraint firstAttribute="trailing" secondItem="71d-Ka-FLt" secondAttribute="trailing" id="r3E-fE-RIG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kv1-yU-Qx2" firstAttribute="bottom" secondItem="SA3-dd-39r" secondAttribute="top" id="7Dn-mu-hjb"/>
+                            <constraint firstItem="SA3-dd-39r" firstAttribute="leading" secondItem="q9i-gf-kTo" secondAttribute="leading" id="8mT-Cq-NmG"/>
+                            <constraint firstAttribute="bottom" secondItem="SA3-dd-39r" secondAttribute="bottom" id="FTB-Eh-aJZ"/>
+                            <constraint firstItem="q9i-gf-kTo" firstAttribute="trailing" secondItem="SA3-dd-39r" secondAttribute="trailing" id="HNk-3u-lT8"/>
+                            <constraint firstItem="kv1-yU-Qx2" firstAttribute="top" secondItem="q9i-gf-kTo" secondAttribute="top" id="Ker-yS-VdG"/>
+                            <constraint firstItem="kv1-yU-Qx2" firstAttribute="leading" secondItem="q9i-gf-kTo" secondAttribute="leading" id="eqY-a5-FqY"/>
+                            <constraint firstItem="q9i-gf-kTo" firstAttribute="trailing" secondItem="kv1-yU-Qx2" secondAttribute="trailing" id="vK2-lQ-rYa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q9i-gf-kTo"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="FTB-Eh-aJZ" id="VA5-eI-LAN"/>
+                        <outlet property="sendButton" destination="71d-Ka-FLt" id="Y5g-wH-fFk"/>
+                        <outlet property="sendButtonView" destination="SA3-dd-39r" id="eWc-An-tok"/>
+                        <outlet property="tableView" destination="kv1-yU-Qx2" id="25e-DW-vvH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qaF-0F-7Fs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-176" y="-187"/>
+        </scene>
+    </scenes>
+</document>
